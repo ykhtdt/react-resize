@@ -1,0 +1,30 @@
+{
+  "name": "react-resize",
+  "version": "1.0.0",
+  "description": "Resize a component by using handlers.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ykhtdt/react-resize.git"
+  },
+  "author": "Jonggwang Park <jgpark7281@gmail.com>",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.1"
+  }
+}
