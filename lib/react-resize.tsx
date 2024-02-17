@@ -31,7 +31,7 @@ type ResizableBoxProps = {
   minConstraints?: [number, number];
 } & Partial<Bounds> & ResizeEvent;
 
-export default function ResizeBox({
+export function ResizeBox({
   children,
   className,
   resizeHandleAxis,
