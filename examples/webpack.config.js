@@ -3,31 +3,22 @@ const path = require("path");
 
 module.exports = (env, argv) => {
   return {
-    mode: "production",
-    entry: "./lib/index.ts",
+    entry: "./src/index.tsx",
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "index.js",
-      library: "ReactResize",
-      libraryTarget: "umd",
+      filename: "bundle.js",
+      clean: true,
     },
     resolve: {
-      extensions: [".ts", ".tsx", ".js", ".jsx"],
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    externals: {
-      "react": {
-        "commonjs": "react",
-        "commonjs2": "react",
-        "amd": "react",
-        "root": "React",
-      },
-      "react-dom": {
-        "commonjs": "react-dom",
-        "commonjs2": "react-dom",
-        "amd": "react-dom",
-        "root": "ReactDOM",
-      },
+    devServer: {
+      static: path.join(__dirname, "src"),
+      compress: true,
+      port: 3000,
+      hot: true,
     },
+    devtool: 'source-map',
     module: {
       rules: [
         {
@@ -49,5 +40,11 @@ module.exports = (env, argv) => {
     performance: {
       hints: false,
     },
-  };
-};
+    plugins: [
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: ['development', 'production'].includes(argv.mode) ? argv.mode : 'production'
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
+    ],
+  }
+}

@@ -7,6 +7,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { cva } from "class-variance-authority";
 import { cn, clamp } from "./utils";
 
+import "./react-resize.css";
+
 type ResizeHandleAxis = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
 
 type Bounds = {
@@ -29,7 +31,7 @@ type ResizableBoxProps = {
   minConstraints?: [number, number];
 } & Partial<Bounds> & ResizeEvent;
 
-export default function ResizeBox({
+export function ResizeBox({
   children,
   className,
   resizeHandleAxis,
@@ -45,7 +47,7 @@ export default function ResizeBox({
 }: React.PropsWithChildren<ResizableBoxProps>) {
   const boundsProps = { top, left, width, height };
 
-  const filteredBoundsProps = Object.fromEntries(Object.entries(boundsProps).filter(([key, value]) => value !== undefined)) as Bounds;
+  const filteredBoundsProps = Object.fromEntries(Object.entries(boundsProps).filter(([_key, value]) => value !== undefined)) as Bounds;
 
   const [bounds, setBounds] = useState<Bounds>(filteredBoundsProps);
 
@@ -88,14 +90,14 @@ export default function ResizeBox({
 const resizeHandleVariants = cva("absolute", {
   variants: {
     axis: {
-      n: "top-0 left-0 translate-y-[-50%] w-full h-4 cursor-n-resize",
-      ne: "top-0 right-0 translate-x-[50%] translate-y-[-50%] w-4 h-4 cursor-ne-resize",
-      e: "top-0 right-0 translate-x-[50%] w-3 h-full cursor-e-resize",
-      se: "bottom-0 right-0 translate-x-[50%] translate-y-[50%] w-4 h-4 cursor-se-resize",
-      s: "bottom-0 left-0 translate-y-[50%] w-full h-3 cursor-s-resize",
-      sw: "bottom-0 left-0 translate-x-[-50%] translate-y-[50%] w-4 h-4 cursor-sw-resize",
-      w: "bottom-0 left-0 translate-x-[-50%] w-3 h-full cursor-w-resize",
-      nw: "top-0 left-0 translate-x-[-50%] translate-y-[-50%] w-4 h-4 cursor-nw-resize",
+      n: "handler-axis-n",
+      ne: "handler-axis-ne",
+      e: "handler-axis-e",
+      se: "handler-axis-se",
+      s: "handler-axis-s",
+      sw: "handler-axis-sw",
+      w: "handler-axis-w",
+      nw: "handler-axis-nw",
     },
   },
 });
