@@ -1,6 +1,6 @@
 {
   "name": "@ykhtdt/react-resize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Resize a component by using handlers.",
   "author": "Jonggwang Park <jgpark7281@gmail.com>",
   "main": "index.js",
