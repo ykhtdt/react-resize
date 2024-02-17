@@ -1,4 +1,4 @@
-import ResizeBox from "../../app/src/resize-box";
+import { ResizeBox } from "../../lib/react-resize";
 
 export default function App() {
   return (
