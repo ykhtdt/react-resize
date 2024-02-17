@@ -1,16 +1,37 @@
 {
-  "name": "react-resize",
+  "name": "@ykhtdt/react-resize",
   "version": "0.0.1",
   "description": "Resize a component by using handlers.",
+  "author": "Jonggwang Park <jgpark7281@gmail.com>",
   "main": "index.js",
-  "scripts": {
-    "examples": "pnpm --filter=@react-resize/examples"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:ykhtdt/react-resize.git"
   },
-  "author": "Jonggwang Park <jgpark7281@gmail.com>",
   "keywords": [],
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "pnpm clean",
+    "build": "pnpm build:modern",
+    "build:modern": "webpack --mode=production"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "css-loader": "^6.10.0",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  }
 }

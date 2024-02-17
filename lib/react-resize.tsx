@@ -7,7 +7,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { cva } from "class-variance-authority";
 import { cn, clamp } from "./utils";
 
-import "./resize-box.css";
+import "./react-resize.css";
 
 type ResizeHandleAxis = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
 
@@ -47,7 +47,7 @@ export default function ResizeBox({
 }: React.PropsWithChildren<ResizableBoxProps>) {
   const boundsProps = { top, left, width, height };
 
-  const filteredBoundsProps = Object.fromEntries(Object.entries(boundsProps).filter(([key, value]) => value !== undefined)) as Bounds;
+  const filteredBoundsProps = Object.fromEntries(Object.entries(boundsProps).filter(([_key, value]) => value !== undefined)) as Bounds;
 
   const [bounds, setBounds] = useState<Bounds>(filteredBoundsProps);
 
