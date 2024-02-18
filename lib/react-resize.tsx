@@ -1,5 +1,3 @@
-"use client";
-
 import type { NonEmptyArray } from "./types";
 
 import { useLayoutEffect, useRef, useState } from "react";
