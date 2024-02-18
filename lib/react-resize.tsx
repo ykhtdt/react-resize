@@ -7,22 +7,22 @@ import { cn, clamp } from "./utils";
 
 import "./react-resize.css";
 
-type ResizeHandleAxis = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
+export type ResizeHandleAxis = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
 
-type Bounds = {
+export  type Bounds = {
   top: number;
   left: number;
   width: number;
   height: number;
 };
 
-type ResizeEvent = {
+export type ResizeEvent = {
   onResizeStart?: (event: React.MouseEvent<Element, MouseEvent>) => void;
   onResize?: (event: MouseEvent) => void;
   onResizeStop?: (event: MouseEvent) => void;
 };
 
-type ResizableBoxProps = {
+export type ResizableBoxProps = {
   className?: string;
   resizeHandleAxis?: NonEmptyArray<ResizeHandleAxis>;
   maxConstraints?: [number, number];
@@ -100,7 +100,7 @@ const resizeHandleVariants = cva("absolute", {
   },
 });
 
-type ResizeHandleProps = {
+export type ResizeHandleProps = {
   axis: ResizeHandleAxis;
   maxConstraints: [number, number];
   minConstraints: [number, number];
