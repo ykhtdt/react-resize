@@ -59,7 +59,7 @@ export function ResizeBox({
         top: bounds.top || boundary.y,
         left: bounds.left || boundary.x,
         width: bounds.width || boundary.width,
-        height: bounds.height ||boundary.height,
+        height: bounds.height || boundary.height,
       });
     }
   }, []);
@@ -170,6 +170,12 @@ function ResizeHandler({
 
   const calculateTop = (bounds: Bounds, deltaY: number) => {
     if (axis.includes("n")) {
+      if (bounds.height + bounds.top - maxConstraints[1] <= 0) {
+        if (bounds.top + deltaY <= 0) {
+          return 0;
+        }
+      }
+
       return clamp(bounds.top + deltaY, bounds.height + bounds.top - maxConstraints[1], bounds.top + bounds.height - minConstraints[1]);
     }
 
@@ -178,6 +184,12 @@ function ResizeHandler({
 
   const calculateLeft = (bounds: Bounds, deltaX: number) => {
     if (axis.includes("w")) {
+      if (bounds.width + bounds.left - maxConstraints[0] <= 0) {
+        if (bounds.left + deltaX <= 0) {
+          return 0;
+        }
+      }
+
       return clamp(bounds.left + deltaX, bounds.width + bounds.left - maxConstraints[0], bounds.left + bounds.width - minConstraints[0]);
     }
 
