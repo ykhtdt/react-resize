@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
     mode: "production",
     entry: "./lib/index.ts",
     output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "../dist"),
       filename: "index.js",
       library: "ReactResize",
       libraryTarget: "umd",
@@ -35,7 +35,7 @@ module.exports = (env, argv) => {
           use: {
             loader: "ts-loader",
             options: {
-              configFile: path.resolve(__dirname, "tsconfig.json"),
+              configFile: path.resolve(__dirname, "../tsconfig.json"),
             },
           },
           exclude: /node_modules/,
