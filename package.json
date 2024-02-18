@@ -17,7 +17,8 @@
     "build": "pnpm build:modern",
     "build:modern": "webpack --config ./scripts/webpack.config.js",
     "dev": "pnpm dev:examples",
-    "dev:examples": "webpack serve --open --config ./scripts/webpack.dev.js"
+    "dev:examples": "webpack serve --open --config ./scripts/webpack.dev.js",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -27,15 +28,17 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@cypress/webpack-dev-server": "^3.7.4",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "css-loader": "^6.10.0",
+    "cypress": "^13.6.4",
     "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack": "^5.90.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.2"
+    "webpack-dev-server": "^4.15.1"
   }
 }
