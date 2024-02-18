@@ -1,5 +1,7 @@
 **/.*
 examples/
 node_modules/
-pnpm-lock.yaml
+scripts/
 lib
+pnpm-lock.yaml
+tsconfig.json
