@@ -1,9 +1,9 @@
-const webpack = require("webpack");
 const path = require("path");
 
 module.exports = (env, argv) => {
   return {
-    entry: "./src/index.tsx",
+    mode: "development",
+    entry: "./examples/src/index.tsx",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.js",
@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     devServer: {
-      static: path.join(__dirname, "src"),
+      static: path.resolve(__dirname, "../examples/src"),
       compress: true,
       port: 3000,
       hot: true,
@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
           use: {
             loader: "ts-loader",
             options: {
-              configFile: path.resolve(__dirname, "tsconfig.json"),
+              configFile: path.resolve(__dirname, "../tsconfig.json"),
             },
           },
           exclude: /node_modules/,
@@ -40,11 +40,5 @@ module.exports = (env, argv) => {
     performance: {
       hints: false,
     },
-    plugins: [
-      new webpack.EnvironmentPlugin({
-        NODE_ENV: ['development', 'production'].includes(argv.mode) ? argv.mode : 'production'
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
-    ],
   }
 }

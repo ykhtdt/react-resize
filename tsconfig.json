@@ -16,6 +16,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["lib"],
-  "exclude": ["node_modules", "examples"]
+  "include": ["lib", "examples"],
+  "exclude": ["node_modules"]
 }
