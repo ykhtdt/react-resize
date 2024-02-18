@@ -1,5 +1,7 @@
 import { ResizeBox } from "../../lib/react-resize";
 
+import "./app.css";
+
 export default function App() {
   return (
     <>
@@ -10,7 +12,7 @@ export default function App() {
         width={330}
         height={222}
         resizeHandleAxis={["n", "ne", "e", "se", "s", "sw", "w", "nw"]}
-        className="inline-block border border-red-500"
+        className="box"
       >
         Resize Box Example
       </ResizeBox>
