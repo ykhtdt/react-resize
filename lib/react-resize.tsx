@@ -65,7 +65,7 @@ export function ResizeBox({
   }, []);
 
   return (
-    <div ref={boundaryRef} style={{ ...bounds }} className={cn(className, "relative")}>
+    <div ref={boundaryRef} style={{ ...bounds }} className={cn(className, "relative")} data-cy="wrapper">
       {children}
       {resizeHandleAxis &&
         resizeHandleAxis.map((axis) => (
@@ -209,5 +209,5 @@ function ResizeHandler({
     }),
   };
 
-  return <span key={axis} {...params} className={cn(resizeHandleVariants({ axis }))} />;
+  return <span key={axis} {...params} className={cn(resizeHandleVariants({ axis }))} data-cy={`handle-axis-${axis}`} />;
 }
