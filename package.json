@@ -18,6 +18,7 @@
     "build:modern": "webpack --config ./scripts/webpack.config.js",
     "dev": "pnpm dev:examples",
     "dev:examples": "webpack serve --open --config ./scripts/webpack.dev.js",
+    "cypress": "pnpm cypress:open",
     "cypress:open": "cypress open"
   },
   "dependencies": {
