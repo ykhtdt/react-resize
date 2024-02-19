@@ -5,6 +5,7 @@
     "module": "es2015",
     "moduleResolution": "node",
     "outDir": "./dist",
+    "baseUrl": ".",
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
@@ -16,6 +17,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["lib", "examples"],
+  "include": ["lib", "examples", "cypress"],
   "exclude": ["node_modules"]
 }

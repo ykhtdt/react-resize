@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
         },
         {
-          test: /\.css/g,
+          test: /\.css$/,
           use: ["style-loader", "css-loader"],
         },
       ],
